@@ -27,6 +27,11 @@ Mock.mock(/\/table\/list/, "post", tableAPI.tableList);
 Mock.mock(/\/table\/delete/, "post", tableAPI.deleteItem);
 Mock.mock(/\/table\/edit/, "post", tableAPI.editItem);
 
+Mock.mock(/\/table\/familyList/, "post", tableAPI.familyTableList);
+
+Mock.mock(/\/table\/attendeeList/, "post", tableAPI.attendeeTableList);
+Mock.mock(/\/table\/diningTableList/, "post", tableAPI.diningTableList);
+
 // monitor
 Mock.mock(/\/monitor/, "post", monitor.monitor);
 

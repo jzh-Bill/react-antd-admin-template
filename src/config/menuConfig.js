@@ -10,6 +10,44 @@ const menuList = [
     roles:["admin","editor","guest"]
   },
   {
+    title: "Attendee Info.",
+    path: "/attendee",
+    icon: "home",
+    roles: ["admin", "editor", "guest"]
+  },
+  {
+    title: "Registration",
+    path: "/registration",
+    icon: "home",
+    children: [
+      {
+        title: "Add/Change Registration",
+        path: "/registration/addChangeRegistration",
+        roles:["admin"]
+      },
+      {
+        title: "Perform Room Assignment",
+        path: "/registration/performRoomAssignment",
+        roles:["admin"]
+      },
+      {
+        title: "Perform Table Assignment",
+        path: "/registration/performTableAssignment",
+        roles:["admin"]
+      },
+      {
+        title: "Counselor Assignment",
+        path: "/registration/counselorAssignment",
+        roles:["admin"]
+      },
+      {
+        title: "Hotels & Rooms",
+        path: "/registration/hotelNRooms",
+        roles:["admin"]
+      }
+    ],
+  },
+  {
     title: "作者博客",
     path: "/doc",
     icon: "file",

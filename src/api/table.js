@@ -21,3 +21,30 @@ export function editItem(data) {
     data
   })
 }
+
+export function familyTableList(data) {
+  return request({
+    url: '/table/familyList',
+    method: 'post',
+    data
+  })
+}
+
+export function attendeeTableList(data) {
+  return request({
+    url: '/table/attendeeList',
+    method: 'post',
+    data
+  })
+}
+
+export function diningTableList(data) {
+  return request({
+    url: '/table/diningTableList',
+    method: 'post',
+    data
+  })
+}
+
+
+

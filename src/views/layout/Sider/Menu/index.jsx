@@ -46,7 +46,7 @@ class Meun extends Component {
             <Menu.Item key={item.path}>
               <Link to={item.path}>
                 {item.icon ? <Icon type={item.icon} /> : null}
-                <span>{item.title}</span>
+                <span className="menu-font-size">{item.title}</span>
               </Link>
             </Menu.Item>
           );

@@ -3,13 +3,16 @@ import Loading from '@/components/Loading'
 const Dashboard = Loadable({loader: () => import(/*webpackChunkName:'Dashboard'*/'@/views/dashboard'),loading: Loading});
 const Doc = Loadable({loader: () => import(/*webpackChunkName:'Doc'*/'@/views/doc'),loading: Loading});
 const Guide = Loadable({loader: () => import(/*webpackChunkName:'Guide'*/'@/views/guide'),loading: Loading});
+
 const Explanation = Loadable({loader: () => import(/*webpackChunkName:'Explanation'*/'@/views/permission'),loading: Loading});
 const AdminPage = Loadable({loader: () => import(/*webpackChunkName:'AdminPage'*/'@/views/permission/adminPage'),loading: Loading});
 const GuestPage = Loadable({loader: () => import(/*webpackChunkName:'GuestPage'*/'@/views/permission/guestPage'),loading: Loading});
 const EditorPage = Loadable({loader: () => import(/*webpackChunkName:'EditorPage'*/'@/views/permission/editorPage'),loading: Loading});
+
 const RichTextEditor = Loadable({loader: () => import(/*webpackChunkName:'RichTextEditor'*/'@/views/components-demo/richTextEditor'),loading: Loading});
 const Markdown = Loadable({loader: () => import(/*webpackChunkName:'Markdown'*/'@/views/components-demo/Markdown'),loading: Loading});
 const Draggable = Loadable({loader: () => import(/*webpackChunkName:'Draggable'*/'@/views/components-demo/draggable'),loading: Loading});
+
 const KeyboardChart = Loadable({loader: () => import(/*webpackChunkName:'KeyboardChart'*/'@/views/charts/keyboard'),loading: Loading});
 const LineChart = Loadable({loader: () => import(/*webpackChunkName:'LineChart'*/'@/views/charts/line'),loading: Loading});
 const MixChart = Loadable({loader: () => import(/*webpackChunkName:'MixChart'*/'@/views/charts/mixChart'),loading: Loading});
@@ -24,15 +27,26 @@ const Error404 = Loadable({loader: () => import(/*webpackChunkName:'Error404'*/'
 const User = Loadable({loader: () => import(/*webpackChunkName:'User'*/'@/views/user'),loading: Loading});
 const About = Loadable({loader: () => import(/*webpackChunkName:'About'*/'@/views/about'),loading: Loading});
 const Bug = Loadable({loader: () => import(/*webpackChunkName:'Bug'*/'@/views/bug'),loading: Loading});
+const Attendee = Loadable({loader: () => import(/*webpackChunkName:'Attendee'*/'@/views/attendee'),loading: Loading});
+
+// const Registration = Loadable({loader: () => import(/*webpackChunkName:'Registration'*/'@/views/registration'),loading: Loading});
+// below are the sub pages under registration.
+const AddChangeRegistration = Loadable({loader: () => import(/*webpackChunkName:'AddChangeRegistration'*/'@/views/registration/addChangeRegistration'),loading: Loading});
+const CounselorAssignment = Loadable({loader: () => import(/*webpackChunkName:'CounselorAssignment'*/'@/views/registration/counselorAssignment'),loading: Loading});
+const HotelNRooms = Loadable({loader: () => import(/*webpackChunkName:'HotelNRooms'*/'@/views/registration/hotelNRooms'),loading: Loading});
+const PerformRoomAssignment = Loadable({loader: () => import(/*webpackChunkName:'PerformRoomAssignment'*/'@/views/registration/performRoomAssignment'),loading: Loading});
+const PerformTableAssignment = Loadable({loader: () => import(/*webpackChunkName:'PerformTableAssignment'*/'@/views/registration/performTableAssignment'),loading: Loading});
 
 export default [
   { path: "/dashboard", component: Dashboard, roles: ["admin","editor","guest"] },
   { path: "/doc", component: Doc, roles: ["admin","editor","guest"] },
   { path: "/guide", component: Guide, roles: ["admin","editor"] },
+
   { path: "/permission/explanation", component: Explanation, roles: ["admin"] },
   { path: "/permission/adminPage", component: AdminPage, roles: ["admin"] },
   { path: "/permission/guestPage", component: GuestPage, roles: ["guest"] },
   { path: "/permission/editorPage", component: EditorPage, roles: ["editor"] },
+
   { path: "/components/richTextEditor", component: RichTextEditor, roles: ["admin","editor"] },
   { path: "/components/Markdown", component: Markdown, roles: ["admin","editor"] },
   { path: "/components/draggable", component: Draggable, roles: ["admin","editor"] },
@@ -49,5 +63,14 @@ export default [
   { path: "/user", component: User, roles: ["admin"] },
   { path: "/about", component: About, roles: ["admin", "editor", "guest"] },
   { path: "/bug", component: Bug, roles: ["admin"] },
+  { path: "/attendee", component: Attendee, roles: ["admin", "editor", "guest"] },
+
+  // { path: "/registration", component: Registration, roles: ["admin", "editor", "guest"] },
+  { path: "/registration/addChangeRegistration", component: AddChangeRegistration, roles: ["admin", "editor", "guest"] },
+  { path: "/registration/counselorAssignment", component: CounselorAssignment, roles: ["admin", "editor", "guest"] },
+  { path: "/registration/hotelNRooms", component: HotelNRooms, roles: ["admin", "editor", "guest"]},
+  { path: "/registration/performRoomAssignment", component: PerformRoomAssignment, roles:["admin", "editor", "guest"]},
+  { path: "/registration/performTableAssignment", component: PerformTableAssignment, roles: ["admin", "editor", "guest"] },
+
   { path: "/error/404", component: Error404 },
 ];
