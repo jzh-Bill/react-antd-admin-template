@@ -6,7 +6,10 @@ import { logout } from "@/store/actions";
 
 //创建一个axios示例
 const service = axios.create({
-  baseURL: process.env.REACT_APP_BASE_API, // api 的 base_url
+  // baseURL: process.env.REACT_APP_BASE_API, // api 的 base_url (保留)
+  // baseURL: "http://localhost:8880", //测试本地的端口代码
+  baseURL: "http://localhost.charlesproxy.com:8880", //测试本地的端口代码使用charles,生产的时候就不要用这行代码
+  
   timeout: 5000, // request timeout
 });
 
