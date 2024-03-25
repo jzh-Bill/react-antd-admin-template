@@ -7,12 +7,14 @@ export const login = (username, password) => (dispatch) => {
       .then((response) => {
         const { data } = response;
         if (data.status === 0) {
-          const token = data.token;
+          console.log("data is", data)
+          const token = data.data.username;
           dispatch(setUserToken(token));
           setToken(token);
           resolve(data);
         } else {
-          const msg = data.message;
+          console.log("incorrect data is", data)
+          const msg = data.msg;
           reject(msg);
         }
       })

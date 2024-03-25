@@ -7,8 +7,10 @@ import monitor from "./monitor";
 
 // 登录与用户相关
 // Mock.mock(/\/login/, "post", loginAPI.login);
+// Mock.mock(/\/userInfo/, "post", loginAPI.userInfo);
+
+//
 Mock.mock(/\/logout/, "post", loginAPI.logout);
-Mock.mock(/\/userInfo/, "post", loginAPI.userInfo);
 Mock.mock(/\/user\/list/, "get", loginAPI.getUsers);
 Mock.mock(/\/user\/delete/, "post", loginAPI.deleteUser);
 Mock.mock(/\/user\/edit/, "post", loginAPI.editUser);

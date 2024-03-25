@@ -18,7 +18,10 @@ const Login = (props) => {
     login(username, password)
       .then((data) => {
         message.success("登录成功");
-        handleUserInfo(data.token);
+
+        console.log("The token is", data.data.username)
+
+        handleUserInfo(data.data.username);
       })
       .catch((error) => {
         setLoading(false);
