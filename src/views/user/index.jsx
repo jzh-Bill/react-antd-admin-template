@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Button, Table, message, Divider } from "antd";
+import { Card, Button, Table, message, Divider, Popconfirm } from "antd";
 import { getUsers, deleteUser, editUser, addUser } from "@/api/user";
 import TypingCard from '@/components/TypingCard'
 import EditUserForm from "./forms/edit-user-form"
@@ -16,7 +16,11 @@ class User extends Component {
   };
   getUsers = async () => {
     const result = await getUsers()
-    const { users, status } = result.data
+
+    const { data : users, status } = result.data
+
+    console.log(result.data)
+
     if (status === 0) {
       this.setState({
         users
@@ -25,7 +29,7 @@ class User extends Component {
   }
   handleEditUser = (row) => {
     this.setState({
-      currentRowData:Object.assign({}, row),
+      currentRowData: Object.assign({}, row),
       editUserModalVisible: true,
     });
   };
@@ -91,6 +95,7 @@ class User extends Component {
       })
     });
   };
+
   componentDidMount() {
     this.getUsers()
   }
@@ -116,7 +121,15 @@ class User extends Component {
               <span>
                 <Button type="primary" shape="circle" icon="edit" title="编辑" onClick={this.handleEditUser.bind(null,row)}/>
                 <Divider type="vertical" />
-                <Button type="primary" shape="circle" icon="delete" title="删除" onClick={this.handleDeleteUser.bind(null,row)}/>
+                <Popconfirm
+                  title="Are you sure delete this task?"
+                  onConfirm={this.handleDeleteUser.bind(null,row)}
+                  okText="Yes"
+                  cancelText="No"
+                >
+                  <Button type="primary" shape="circle" icon="delete" title="删除"/>
+                </Popconfirm>
+                
               </span>
             )}/>
           </Table>
