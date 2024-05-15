@@ -24,30 +24,30 @@ class EditUserForm extends Component {
     };
     return (
       <Modal
-        title="编辑"
+        title="Editing"
         visible={visible}
         onCancel={onCancel}
         onOk={onOk}
         confirmLoading={confirmLoading}
       >
         <Form {...formItemLayout}>
-          <Form.Item label="用户ID:">
+          <Form.Item label="User ID:">
             {getFieldDecorator("id", {
               initialValue: id,
             })(<Input disabled />)}
           </Form.Item>
-          <Form.Item label="用户名称:">
+          <Form.Item label="Name:">
             {getFieldDecorator("name", {
-              rules: [{ required: true, message: "请输入用户名称!" }],
+              rules: [{ required: true, message: "Please enter user real name" }],
               initialValue: name,
-            })(<Input placeholder="请输入用户名称" />)}
+            })(<Input placeholder="Please enter user real name" />)}
           </Form.Item>
           {/* <Form.Item label="User Password:">
             {getFieldDecorator("userPassword", {
               initialValue: userPassword,
             })(<Input disabled />)}
           </Form.Item> */}
-          <Form.Item label="用户角色:">
+          {/* <Form.Item label="用户角色:">
             {getFieldDecorator("role", {
               initialValue: role,
             })(
@@ -57,11 +57,11 @@ class EditUserForm extends Component {
                 <Select.Option value="guest">guest</Select.Option>
               </Select>
             )}
-          </Form.Item>
-          <Form.Item label="用户描述:">
+          </Form.Item> */}
+          <Form.Item label="Description:">
             {getFieldDecorator("description", {
               initialValue: description,
-            })(<TextArea rows={4} placeholder="请输入用户描述" />)}
+            })(<TextArea rows={4} placeholder="Please enter user's description" />)}
           </Form.Item>
         </Form>
       </Modal>

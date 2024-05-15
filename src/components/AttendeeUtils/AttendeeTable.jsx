@@ -184,7 +184,7 @@ class AttendeeTable extends Component {
 
   render() {
     return (
-      <div style={{width: "100%", margin: "40px 0 0 0"}}>
+      <div style={{width: "100%", margin: "0px 0 0 0"}}>
         <div style={{width: "100%"}} >
           <Collapse defaultActiveKey={["1"]}>
             <Panel header="List Filter" key="1" >
@@ -200,11 +200,11 @@ class AttendeeTable extends Component {
                   </Radio.Group>
                 </Form.Item>
 
-                <span style={{marginLeft: "50px"}}>
+                <span style={{marginLeft: "0px"}}>
                   <Form.Item label="State:">
                     <Select
                       showSearch
-                      style={{ width: 160 }}
+                      style={{ width: 130 }}
                       placeholder="Select a State"
                       optionFilterProp="children"
                       onChange={this.statesOnChange}
@@ -218,11 +218,11 @@ class AttendeeTable extends Component {
                     </Select>                    
                   </Form.Item>
                 </span>
-                <span style={{marginLeft: "50px"}}>
+                <span style={{marginLeft: "0px"}}>
                   <Form.Item label="Fellowship:">
                       <Select
                         showSearch
-                        style={{ width: 350 }}
+                        style={{ width: 200 }}
                         placeholder="Select a Fellowship"
                         optionFilterProp="children"
                         onChange={this.fellowshipOnChange}
@@ -241,33 +241,28 @@ class AttendeeTable extends Component {
           </Collapse>
 
           <Collapse defaultActiveKey={["2"]}>
-            <Panel header="Search By" key="2">
-              <Form layout="inline">
-                <Form.Item label="Confirm ID">
-                  <Input onChange={this.filterCnfrmIDChange} />
-                </Form.Item>
-                <Form.Item label="Last Name:">
-                  <Input onChange={this.filterLNameChange} />
-                </Form.Item>
-                <Form.Item label="First Name:">
-                  <Input onChange={this.filterFNameChange} />
-                </Form.Item>
-
-
-                <Form.Item label="Chinese Name:">
-                  <Input onChange={this.filterChnNameChange} />
-                </Form.Item>
-                <Form.Item label="Personal ID:">
-                  <Input onChange={this.filterPersonalIDChange} />
-                </Form.Item>
-
-
-                <Form.Item>
-                  <Button type="primary" icon="search" onClick={this.fetchData}>
-                    search
-                  </Button>
-                </Form.Item>
-              </Form>
+            <Panel header="Search By" key="2" style={{padding: '0'}} className="panel-style">
+              <div className="form-wrapper">
+                <Form layout="inline">
+                <Form.Item label="Personal ID:" className="itemWrapper">
+                    <Input onChange={this.filterPersonalIDChange} size="small"/>
+                  </Form.Item>
+                  <Form.Item label="Last Name:" className="itemWrapper">
+                    <Input onChange={this.filterLNameChange} size="small" />
+                  </Form.Item>
+                  <Form.Item label="First Name:" className="itemWrapper">
+                    <Input onChange={this.filterFNameChange} size="small" />
+                  </Form.Item>
+                  <Form.Item label="Chinese Name:" className="itemWrapper">
+                    <Input onChange={this.filterChnNameChange} size="small"/>
+                  </Form.Item>
+                  <Form.Item style={{margin: '0 0 0 10px'}}>
+                    <Button type="primary" icon="search" onClick={this.fetchData}>
+                      search
+                    </Button>
+                  </Form.Item>
+                </Form>
+              </div>
             </Panel>
           </Collapse>
 
@@ -278,13 +273,10 @@ class AttendeeTable extends Component {
             rowClassName={this.setRowClassName}
             scroll={{ y: 500}}
           >
+            <Column title="Personal ID" dataIndex="personalID" key="fellowship" width={70} align="center" className="title-font-size-large"/>
             <Column title="Confirm ID" dataIndex="confirmID" key="confirmID" width={55} align="center" className="title-font-size-large"/>
             <Column title="Last Name" dataIndex="lastName" key="lastName" width={50} align="center" className="title-font-size-large"/>
             <Column title="First Name" dataIndex="firstName" key="firstName" width={50} align="center" className="title-font-size-large"/>
-            <Column title="Chinese Name" dataIndex="chineseName" key="chineseName" width={70} align="center" className="title-font-size-large" />
-            <Column title="Personal ID" dataIndex="personalID" key="fellowship" width={70} align="center" className="title-font-size-large"/>
-
-            <Column title="Payment Type" dataIndex="paymentType" key="paymentType" width={60} align="center" className="title-font-size-large"/>
             <Column title="State" dataIndex="state" key="state" width={45} align="center" className="title-font-size-large"/>
             <Column title="Fellowship" dataIndex="fellowship" key="fellowship" width={150} align="center" className="title-font-size-large"/>
           </Table>

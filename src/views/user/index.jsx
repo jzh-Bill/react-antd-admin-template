@@ -41,7 +41,7 @@ class User extends Component {
       return
     }
     deleteUser({id}).then(res => {
-      message.success("删除成功")
+      message.success("Successfully Deleted")
       this.getUsers();
     })
   }
@@ -103,23 +103,24 @@ class User extends Component {
     const { users } = this.state
     const title = (
       <span>
-        <Button type='primary' onClick={this.handleAddUser}>添加用户</Button>
+        <Button type='primary' onClick={this.handleAddUser}>Add a User</Button>
       </span>
     )
-    const cardContent = `在这里，你可以对系统中的用户进行管理，例如添加一个新用户，或者修改系统中已经存在的用户。`
+    const cardContent = `Here you can manage the users in the system, such as adding a new user or modifying a user that already exists in the system.`
     return (
       <div className="app-container">
-        <TypingCard title='用户管理' source={cardContent} />
+        <TypingCard title='Users Managment' source={cardContent} />
         <br/>
         <Card title={title}>
           <Table bordered rowKey="id" dataSource={users} pagination={false}>
-            <Column title="用户ID" dataIndex="id" key="id" align="center"/>
-            <Column title="用户名称" dataIndex="name" key="name" align="center"/>
-            <Column title="用户角色" dataIndex="role" key="role" align="center"/>
-            <Column title="用户描述" dataIndex="description" key="description" align="center" />
-            <Column title="操作" key="action" width={195} align="center"render={(text, row) => (
+            <Column title="User ID" dataIndex="id" key="id" align="center"/>
+            <Column title="Username" dataIndex="username" key="username" align="center"/>
+            <Column title="User Real name" dataIndex="name" key="name" align="center"/>
+            <Column title="Role" dataIndex="role" key="role" align="center"/>
+            <Column title="Description" dataIndex="description" key="description" align="center" />
+            <Column title="Action" key="action" width={195} align="center"render={(text, row) => (
               <span>
-                <Button type="primary" shape="circle" icon="edit" title="编辑" onClick={this.handleEditUser.bind(null,row)}/>
+                <Button type="primary" shape="circle" icon="edit" title="Editing" onClick={this.handleEditUser.bind(null,row)}/>
                 <Divider type="vertical" />
                 <Popconfirm
                   title="Are you sure delete this task?"
@@ -127,7 +128,7 @@ class User extends Component {
                   okText="Yes"
                   cancelText="No"
                 >
-                  <Button type="primary" shape="circle" icon="delete" title="删除"/>
+                  <Button type="primary" shape="circle" icon="delete" title="Deleting"/>
                 </Popconfirm>
                 
               </span>

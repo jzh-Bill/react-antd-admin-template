@@ -38,28 +38,29 @@ class AddUserForm extends Component {
         confirmLoading={confirmLoading}
       >
         <Form {...formItemLayout}>
-          <Form.Item label="User ID:">
-            {getFieldDecorator("id", {
-              rules: [{ required: true, validator: this.validatUserID }],
-            })(<Input placeholder="Please enter user ID" />)}
-          </Form.Item>
           <Form.Item label="Username:">
-            {getFieldDecorator("name", {
+            {getFieldDecorator("username", {
               rules: [{ required: true, message: "Please enter the username!" }],
             })(<Input placeholder="Please enter the username!" />)}
           </Form.Item>
+
+          <Form.Item label="Real name:">
+            {getFieldDecorator("name", {
+              rules: [{ required: true, message: "Please enter the real name!" }],
+            })(<Input placeholder="Please enter the real name!" />)}
+          </Form.Item>
+
           <Form.Item label="User Password:">
-            {getFieldDecorator("userPassword", {
+            {getFieldDecorator("password", {
               rules: [{ required: true, message: "Please enter the password!" }],
             })(<Input placeholder="Please enter the password!" />)}
           </Form.Item>
           <Form.Item label="User Role:">
             {getFieldDecorator("role", {
-              initialValue: "admin",
+              initialValue: "editor",
             })(
               <Select style={{ width: 120 }}>
-                <Select.Option value="admin">admin</Select.Option>
-                <Select.Option value="guest">guest</Select.Option>
+                <Select.Option value="editor">editor</Select.Option>
               </Select>
             )}
           </Form.Item>

@@ -22,8 +22,8 @@ const Attendee = () => {
 
   return (
     <div className='attendee-lay-out' >
-      <div className="header">Attendee Information Table</div>
-      <Divider orientation="left" orientationMargin="0"><span className="divider-text">Identity</span></Divider>
+      <div className="header">Attendees Information</div>
+      <Divider orientation="left" orientationMargin="0"><span className="divider-text">Selected Attendee Identity</span></Divider>
       <div className="attendee-info-container">
         <label className='display-text '>Confirm ID: </label> 
         <input value={confirmID} type="text" readonly="readonly" className='margin-right emphasize-text'></input>
@@ -41,13 +41,13 @@ const Attendee = () => {
       <Divider></Divider>
 
       <div className="table-tabs-container">
-        {/* <Divider orientation="left" orientationMargin="0"><span className="divider-text">Primary Info.</span></Divider> */}
-        <div className="tab-display-container">
-          <TabsDisplay />
-        </div>    
-        {/* <Divider orientation="left" orientationMargin="0"><span className="divider-text">Attendees Table</span></Divider> */}
-        <div style={{width: "100%"}}>
+        <div className="Attendee-table-wrapper">
+          <Divider orientation="center"><span className="divider-text">Attendees Table</span></Divider>
           <AttendeeTable />
+        </div>  
+        <div className="tab-display-container">
+        <Divider orientation="center"><span className="divider-text">Attendee Details</span></Divider>
+          <TabsDisplay />
         </div>    
       </div>
 

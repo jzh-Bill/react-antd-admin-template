@@ -65,43 +65,39 @@ const TabsDisplay = () => {
         <br />
       </TabPane>
       <TabPane tab="Reservation" key="2">
-
-        <Row gutter={[0, 8]}>
-          <Col span={8} offset={4}><span className="form-label-container"><label>Room: </label></span> <input type="text" ></input></Col>
-          <Col span={8}><span className="form-label-container-large"><label>Room Type: </label></span> <input type="text" style={{width: "30%"}}></input></Col>
-        </Row>
-        <Row gutter={[0, 8]}>
-          <Col span={10} offset={4}><span className="form-label-container"><label>Hotel: </label></span> <input type="text" style={{width: "70%"}}></input></Col>
-        </Row>
-        <Row gutter={[0, 8]}>
-          <Col span={6} offset={4}><span className="form-label-container"><label>Ch. In:   </label></span><input type="text"  style={{width: "40%"}}></input></Col>
-          <Col span={6}><span className="form-label-container"><label>Exp. In:  </label></span> <input type="text"  style={{width: "40%"}}></input></Col>
-        </Row>       
-        <Row gutter={[0, 8]}>
-          <Col span={6} offset={4}><span className="form-label-container"><label>Ch. Out:</label></span><input type="text"  style={{width: "40%"}}></input></Col>
-          <Col span={6}><span className="form-label-container"><label>Exp. Out:</label></span> <input type="text"  style={{width: "40%"}}></input></Col>
-        </Row>  
-        <Row gutter={[0, 8]}>
-          <Col span={4} offset={4}><span className="checkbox-form-label-container"><label>Late Arrival: </label></span> <Checkbox /></Col>
-          <Col span={14} offset={0}><span style={{paddingRight: "20px"}}>Credit Card</span><span style={{paddingRight: "30px"}}>VS: <Checkbox /></span><span style={{paddingRight: "30px"}}>MS: <Checkbox /></span><span style={{paddingRight: "30px"}}>AE: <Checkbox /></span><span style={{paddingRight: "30px"}}>Other: <Checkbox /></span></Col>
-        </Row>
-        <Row gutter={[0, 8]}>
-          <Col span={4} offset={4}><span className="checkbox-form-label-container"><label>Guarantee: </label></span> <Checkbox /></Col>
-          <Col span={12} offset={0}><span className="form-label-container" style={{marginRight: "5px", width: "100px"}}><label>Card Number:</label></span><input type="text" style={{width: "50%"}}></input></Col>
-        </Row>
-        <Row gutter={[0, 8]}>
-          <Col span={4} offset={4}><span className="checkbox-form-label-container"><label>Self Pay:</label></span> <Checkbox /></Col>
-          <Col span={10} offset={0}><span className="form-label-container" style={{marginRight: "5px", width: "100px"}}><label>Expiration:</label></span><input type="text" style={{width: "20%"}}></input></Col>
-        </Row>    
-        <Row gutter={[0, 8]}>
-          <Col span={4} offset={4}><span className="checkbox-form-label-container" ><label>Room Leader:</label></span> <Checkbox /></Col>
-          <Col span={10} offset={0}><span className="form-label-container" style={{marginRight: "5px", width: "100px"}}><label>Request ID:</label></span><input type="text" style={{width: "20%"}}></input></Col>
-        </Row>
-        <Row gutter={[0, 8]}>
-          <Col span={20} offset={2}>
-            <FamilyTable />
-          </Col>
-        </Row>
+        <div style={{margin: "40px 0 0 0"}}>
+          <Row gutter={[0, 8]}>
+            <Col span={8} offset={4}><span className="form-label-container"><label>Room: </label></span> <input type="text" ></input></Col>
+            <Col span={8}><span className="form-label-container-large"><label>Room Type: </label></span> <input type="text" style={{width: "30%"}}></input></Col>
+          </Row>
+          <Row gutter={[0, 8]}>
+            <Col span={10} offset={4}><span className="form-label-container"><label>Hotel: </label></span> <input type="text" style={{width: "70%"}}></input></Col>
+          </Row>
+          <Row gutter={[0, 8]}>
+            <Col span={6} offset={4}><span className="form-label-container"><label>Ch. In:   </label></span><input type="text"  style={{width: "40%"}}></input></Col>
+            <Col span={6}><span className="form-label-container"><label>Exp. In:  </label></span> <input type="text"  style={{width: "40%"}}></input></Col>
+          </Row>       
+          <Row gutter={[0, 8]}>
+            <Col span={6} offset={4}><span className="form-label-container"><label>Ch. Out:</label></span><input type="text"  style={{width: "40%"}}></input></Col>
+            <Col span={6}><span className="form-label-container"><label>Exp. Out:</label></span> <input type="text"  style={{width: "40%"}}></input></Col>
+          </Row>  
+          <Row gutter={[0, 8]}>
+            <Col span={4} offset={4}><span className="checkbox-form-label-container"><label>Late Arrival: </label></span> <Checkbox /></Col>
+            <Col span={14} offset={0}><span style={{paddingRight: "20px"}}>Credit Card</span><span style={{paddingRight: "30px"}}>VS: <Checkbox /></span><span style={{paddingRight: "30px"}}>MS: <Checkbox /></span><span style={{paddingRight: "30px"}}>AE: <Checkbox /></span><span style={{paddingRight: "30px"}}>Other: <Checkbox /></span></Col>
+          </Row>
+          <Row gutter={[0, 8]}>
+            <Col span={4} offset={4}><span className="checkbox-form-label-container"><label>Guarantee: </label></span> <Checkbox /></Col>
+            <Col span={12} offset={0}><span className="form-label-container" style={{marginRight: "5px", width: "100px"}}><label>Card Number:</label></span><input type="text" style={{width: "50%"}}></input></Col>
+          </Row>
+          <Row gutter={[0, 8]}>
+            <Col span={4} offset={4}><span className="checkbox-form-label-container"><label>Self Pay:</label></span> <Checkbox /></Col>
+            <Col span={10} offset={0}><span className="form-label-container" style={{marginRight: "5px", width: "100px"}}><label>Expiration:</label></span><input type="text" style={{width: "20%"}}></input></Col>
+          </Row>    
+          <Row gutter={[0, 8]}>
+            <Col span={4} offset={4}><span className="checkbox-form-label-container" ><label>Room Leader:</label></span> <Checkbox /></Col>
+            <Col span={10} offset={0}><span className="form-label-container" style={{marginRight: "5px", width: "100px"}}><label>Request ID:</label></span><input type="text" style={{width: "20%"}}></input></Col>
+          </Row>
+        </div>
         <br />
       </TabPane>
       <TabPane tab="Meals" key="3">
@@ -175,6 +171,13 @@ const TabsDisplay = () => {
           </Col>
         </Row>
         <br />
+      </TabPane>
+      <TabPane tab="Family Members" key="5">
+        <Row gutter={[0, 8]}>
+          <Col span={20} offset={2}>
+            <FamilyTable />
+          </Col>
+        </Row>
       </TabPane>
     </Tabs>
   )
