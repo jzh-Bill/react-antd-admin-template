@@ -23,35 +23,31 @@ const Attendee = () => {
   return (
     <div className='attendee-lay-out' >
       <div className="header">Attendees Information</div>
-      <Divider orientation="left" orientationMargin="0"><span className="divider-text">Selected Attendee Identity</span></Divider>
-      <div className="attendee-info-container">
-        <label className='display-text '>Confirm ID: </label> 
-        <input value={confirmID} type="text" readonly="readonly" className='margin-right emphasize-text'></input>
-
-        <label className='display-text '>Last Name: </label> 
-        <input value={lastName} type="text" readonly="readonly" className='margin-right emphasize-text'></input>
-
-        <label className='display-text '>First Name: </label> 
-        <input value={firstName} type="text" readonly="readonly" className='margin-right emphasize-text'></input>
-
-        <label className='display-text '>Church Name: </label> 
-        <input value={churchName} type="text" readonly="readonly" className='margin-right emphasize-text'></input>
-      </div>
-
       <Divider></Divider>
-
       <div className="table-tabs-container">
         <div className="Attendee-table-wrapper">
           <Divider orientation="center"><span className="divider-text">Attendees Table</span></Divider>
           <AttendeeTable />
-        </div>  
+        </div>
         <div className="tab-display-container">
-        <Divider orientation="center"><span className="divider-text">Attendee Details</span></Divider>
+          <Divider orientation="center"><span className="divider-text">Selected Attendee</span></Divider>
+          <div className="attendee-info-container">
+            <label className='display-text '>Confirm ID: </label> 
+            <input value={confirmID} type="text" readonly="readonly" className='margin-right emphasize-text input-size'></input>
+
+            <label className='display-text '>Last Name: </label> 
+            <input value={lastName} type="text" readonly="readonly" className='margin-right emphasize-text input-size'></input>
+
+            <label className='display-text '>First Name: </label> 
+            <input value={firstName} type="text" readonly="readonly" className='margin-right emphasize-text input-size'></input>
+
+            <label className='display-text '>Church Name: </label> 
+            <input value={churchName} type="text" readonly="readonly" className='margin-right emphasize-text input-size'></input>
+          </div>
+          <Divider orientation="center"><span className="divider-text">Attendee Details</span></Divider>
           <TabsDisplay />
         </div>    
       </div>
-
-
     </div>
   );
 };
